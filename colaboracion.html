@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Del otro lado del árbol — Colaborar</title>
+  <meta name="description" content="Sumate como voluntario/a o realizá donaciones en la Biblioteca Popular Del otro lado del árbol para apoyar la lectura comunitaria y el Parque Saavedra.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" id="skip-to-content-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html" aria-current="page">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-grid" id="colaboracion-page-grid">
+
+      <!-- ============ SECCIÓN COLABORACIÓN Y CONTACTO (.contact-section) ============ -->
+      <section class="contact-section" id="colaboracion-main-section" aria-labelledby="colaboracion-title">
+        <div class="contact-section__inner" id="colaboracion-inner">
+
+          <!-- Encabezado descriptivo -->
+          <div class="contact-section__header" id="colaboracion-header">
+            <h1 class="heading heading--display" id="colaboracion-title">Sumate a colaborar</h1>
+            <p class="text" id="colaboracion-lead-text" style="margin-top: var(--space-xs);">
+              Tu compromiso hace posible mantener las puertas abiertas de la biblioteca, realizar talleres gratuitos y enriquecer nuestro catálogo comunitario para todas las infancias y familias.
+            </p>
+          </div>
+
+          <!-- Opciones de colaboración -->
+          <div class="colaboracion-cards-grid" id="colaboracion-opciones-grid">
+
+            <article class="history-card" id="opcion-card-1">
+              <span class="icon" id="opcion-icon-1" aria-hidden="true" style="color: var(--color-accion); margin-bottom: var(--space-xs);">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <h2 class="heading heading--base" id="opcion-title-1">Voluntariado</h2>
+              <p class="text text--small" id="opcion-desc-1">Participá en la atención de la biblioteca, organización de eventos, narraciones o talleres comunitarios.</p>
+            </article>
+
+            <article class="history-card" id="opcion-card-2">
+              <span class="icon" id="opcion-icon-2" aria-hidden="true" style="color: var(--color-accion); margin-bottom: var(--space-xs);">
+                <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </span>
+              <h2 class="heading heading--base" id="opcion-title-2">Donación de libros</h2>
+              <p class="text text--small" id="opcion-desc-2">Aceptamos libros infantiles, juveniles y de literatura general en buen estado para sumar al catálogo público.</p>
+            </article>
+
+            <article class="history-card" id="opcion-card-3">
+              <span class="icon" id="opcion-icon-3" aria-hidden="true" style="color: var(--color-accion); margin-bottom: var(--space-xs);">
+                <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </span>
+              <h2 class="heading heading--base" id="opcion-title-3">Donación económica</h2>
+              <p class="text text--small" id="opcion-desc-3">Aportá con una cuota mensual como socio/a o una donación única para el mantenimiento del espacio.</p>
+            </article>
+
+          </div>
+
+          <!-- ============ COMUNIDAD BIBLIO (PLANES DE SUSCRIPCIÓN) ============ -->
+          <section class="comunidad-biblio" id="comunidad-biblio-section" aria-labelledby="comunidad-title">
+            <div class="comunidad-biblio__header" id="comunidad-header">
+              <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-xs); margin-bottom: var(--space-xs);">
+                <img src="img/logo.png" alt="Foto de perfil Biblioteca Del otro lado del árbol" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid white; box-shadow: var(--shadow-sm);" referrerPolicy="no-referrer">
+                <span class="comunidad-biblio__tag" id="comunidad-tag">
+                  @comunidadbiblio
+                </span>
+              </div>
+              <h2 class="heading heading--xl" id="comunidad-title">Bienvenidos a COMUNIDAD BIBLIO</h2>
+              <p class="text" id="comunidad-subtitle" style="margin-top: var(--space-xs); opacity: 0.9;">
+                Suscribite al Plan que prefieras y ayudás para que La Biblio siga creciendo.
+              </p>
+            </div>
+
+            <!-- Grilla de Planes de Suscripción Mensual -->
+            <div class="comunidad-plans-grid" id="comunidad-plans-grid">
+
+              <!-- Plan 1 -->
+              <article class="plan-card" id="plan-1001">
+                <div>
+                  <div class="plan-card__header">
+                    <div class="plan-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <span class="plan-card__price">$1.001 <small style="font-size: 0.75em; font-weight: normal;">/mes</small></span>
+                  </div>
+                  <h3 class="plan-card__title" id="plan-title-1001">Las MIL Y UNA noches</h3>
+                  <p class="plan-card__sub" id="plan-desc-1001">Colaboración mensual inicial para apoyar el sostenimiento del espacio.</p>
+                </div>
+                <div class="plan-card__action">
+                  <a class="btn btn--small" href="#colaboracion-form" onclick="selectPlan('Las MIL Y UNA noches ($1.001/mes)')">COLABORÁ con $1.001</a>
+                </div>
+              </article>
+
+              <!-- Plan 2 -->
+              <article class="plan-card" id="plan-3000">
+                <div>
+                  <div class="plan-card__header">
+                    <div class="plan-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <span class="plan-card__price">$3.000 <small style="font-size: 0.75em; font-weight: normal;">/mes</small></span>
+                  </div>
+                  <h3 class="plan-card__title" id="plan-title-3000">Los TRES chanchitos</h3>
+                  <p class="plan-card__sub" id="plan-desc-3000">Aporte mensual continuo para la compra de nuevos ejemplares infantiles.</p>
+                </div>
+                <div class="plan-card__action">
+                  <a class="btn btn--small" href="#colaboracion-form" onclick="selectPlan('Los TRES chanchitos ($3.000/mes)')">COLABORÁ con $3.000</a>
+                </div>
+              </article>
+
+              <!-- Plan 3 -->
+              <article class="plan-card" id="plan-5000">
+                <div>
+                  <div class="plan-card__header">
+                    <div class="plan-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <span class="plan-card__price">$5.000 <small style="font-size: 0.75em; font-weight: normal;">/mes</small></span>
+                  </div>
+                  <h3 class="plan-card__title" id="plan-title-5000">CINCO semanas en globo</h3>
+                  <p class="plan-card__sub" id="plan-desc-5000">Ayuda a financiar los materiales para talleres artísticos comunitarios.</p>
+                </div>
+                <div class="plan-card__action">
+                  <a class="btn btn--small" href="#colaboracion-form" onclick="selectPlan('CINCO semanas en globo ($5.000/mes)')">COLABORÁ con $5.000</a>
+                </div>
+              </article>
+
+              <!-- Plan 4 -->
+              <article class="plan-card" id="plan-7000">
+                <div>
+                  <div class="plan-card__header">
+                    <div class="plan-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <span class="plan-card__price">$7.000 <small style="font-size: 0.75em; font-weight: normal;">/mes</small></span>
+                  </div>
+                  <h3 class="plan-card__title" id="plan-title-7000">Blancanieves y los SIETE enanitos</h3>
+                  <p class="plan-card__sub" id="plan-desc-7000">Apoyo fundamental para mantener actividades semanales abiertas y gratuitas.</p>
+                </div>
+                <div class="plan-card__action">
+                  <a class="btn btn--small" href="#colaboracion-form" onclick="selectPlan('Blancanieves y los SIETE enanitos ($7.000/mes)')">COLABORÁ con $7.000</a>
+                </div>
+              </article>
+
+              <!-- Plan 5 -->
+              <article class="plan-card" id="plan-10000">
+                <div>
+                  <div class="plan-card__header">
+                    <div class="plan-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <span class="plan-card__price">$10.000 <small style="font-size: 0.75em; font-weight: normal;">/mes</small></span>
+                  </div>
+                  <h3 class="plan-card__title" id="plan-title-10000">Messi y El Diego</h3>
+                  <p class="plan-card__sub" id="plan-desc-10000">Suscripción estelar para impulsar grandes proyectos pedagógicos y culturales.</p>
+                </div>
+                <div class="plan-card__action">
+                  <a class="btn btn--small" href="#colaboracion-form" onclick="selectPlan('Messi y El Diego ($10.000/mes)')">COLABORÁ con $10.000</a>
+                </div>
+              </article>
+
+              <!-- Plan 6 -->
+              <article class="plan-card" id="plan-20000">
+                <div>
+                  <div class="plan-card__header">
+                    <div class="plan-card__icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20"/><path d="M20 12v8H4v-8"/><path d="M12 2v10"/></svg>
+                    </div>
+                    <span class="plan-card__price">$20.000 <small style="font-size: 0.75em; font-weight: normal;">/mes</small></span>
+                  </div>
+                  <h3 class="plan-card__title" id="plan-title-20000">VEINTE mil leguas de viaje submarino</h3>
+                  <p class="plan-card__sub" id="plan-desc-20000">Máximo aporte protector para la infraestructura y mantenimiento integral de La Biblio.</p>
+                </div>
+                <div class="plan-card__action">
+                  <a class="btn btn--small" href="#colaboracion-form" onclick="selectPlan('VEINTE mil leguas de viaje submarino ($20.000/mes)')">COLABORÁ con $20.000</a>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Opciones Especiales: Monto Libre y Colaboración Única -->
+            <div class="comunidad-extra-grid" id="comunidad-extra-grid">
+              <div class="extra-option-card" id="extra-monto-libre">
+                <div class="icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div>
+                  <strong class="heading heading--sm" style="display: block;">Monto Mensual Libre</strong>
+                  <span class="text text--small">¡VOS elegís el monto mensual que prefieras!</span>
+                </div>
+                <a class="btn btn--small" style="margin-left: auto; flex-shrink: 0;" href="#colaboracion-form" onclick="selectPlan('Monto Mensual Libre')">Elegir monto</a>
+              </div>
+
+              <div class="extra-option-card" id="extra-donacion-unica">
+                <div class="icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8v12"/><path d="M19 12H5"/><path d="M12 3a3 3 0 0 0-3 3c0 2 3 5 3 5s3-3 3-5a3 3 0 0 0-3-3z"/></svg>
+                </div>
+                <div>
+                  <strong class="heading heading--sm" style="display: block;">Colaboración Única</strong>
+                  <span class="text text--small">Aporte puntual por única vez (no suscripción mensual).</span>
+                </div>
+                <a class="btn btn--small" style="margin-left: auto; flex-shrink: 0;" href="#colaboracion-form" onclick="selectPlan('Colaboración Única por única vez')">Aportar</a>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Grilla de Registro + Información complementaria -->
+          <div class="contact-grid" id="colaboracion-main-grid">
+
+            <!-- Columna Izquierda: Formulario -->
+            <div class="contact-form-block" id="colaboracion-form-block">
+              <h2 class="heading heading--lg" id="colaboracion-form-title" style="margin-bottom: var(--space-sm);">Formulario de registro</h2>
+
+              <form class="contact-section__form" id="colaboracion-form" action="#" method="post" onsubmit="handleFormSubmit(event, '¡Muchas gracias por registrarte! Tu propuesta de colaboración fue recibida y nos pondremos en contacto a la brevedad.');">
+
+                <div class="form-grid-2col" id="form-row-1">
+                  <div class="form-field" id="form-field-nombre">
+                    <label class="label" id="label-nombre" for="nombre">Nombre y apellido *</label>
+                    <input class="input" id="nombre" type="text" name="nombre" placeholder="Escribí tu nombre completo" required minlength="2" autocomplete="name">
+                  </div>
+
+                  <div class="form-field" id="form-field-email">
+                    <label class="label" id="label-email" for="email">Correo electrónico *</label>
+                    <input class="input" id="email" type="email" name="email" placeholder="ejemplo@correo.com" required autocomplete="email">
+                  </div>
+                </div>
+
+                <div class="form-grid-2col" id="form-row-2">
+                  <div class="form-field" id="form-field-telefono">
+                    <label class="label" id="label-telefono" for="telefono">Teléfono de contacto</label>
+                    <input class="input" id="telefono" type="tel" name="telefono" placeholder="11 1234 5678" pattern="[0-9\s\+\-\(\)]{6,20}" autocomplete="tel">
+                  </div>
+
+                  <div class="form-field" id="form-field-tipo">
+                    <label class="label" id="label-tipo" for="tipo-colaboracion">¿Cómo querés colaborar? *</label>
+                    <select class="input" id="tipo-colaboracion" name="tipo_colaboracion" required>
+                      <option value="" disabled selected>Seleccioná una opción</option>
+                      <option value="voluntariado">Voluntariado en la biblioteca</option>
+                      <option value="libros">Donación de libros infantiles o literatura</option>
+                      <option value="donacion-economica">Aporte económico o cuota de socio/a</option>
+                      <option value="tallerista">Propuesta de taller o actividad cultural</option>
+                      <option value="otro">Otro tipo de colaboración</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-field" id="form-field-mensaje">
+                  <label class="label" id="label-mensaje" for="mensaje">Mensaje o comentarios</label>
+                  <textarea class="input" id="mensaje" name="mensaje" placeholder="Contanos tus horarios disponibles, los libros que deseás donar o cualquier consulta..." minlength="5" style="min-height: 110px;"></textarea>
+                </div>
+
+                <button class="btn" id="colaboracion-submit-btn" type="submit" style="align-self: flex-start; margin-top: var(--space-xs);">
+                  Enviar registro
+                </button>
+
+                <div class="form-feedback" id="colaboracion-form-feedback" aria-live="polite"></div>
+
+              </form>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta de información para colaboradores -->
+            <div class="contact-info-card" id="colaboracion-info-card">
+              <h2 class="heading heading--lg" id="colaboracion-info-title">¿Cómo nos organizamos?</h2>
+
+              <ul class="info-list" id="colaboracion-info-list">
+                <li class="info-item" id="colab-info-1">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Paso 1: Registro</strong>
+                    <span class="text text--small">Completá el formulario indicando tu interés y forma preferida de participación.</span>
+                  </div>
+                </li>
+
+                <li class="info-item" id="colab-info-2">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Paso 2: Encuentro informativo</strong>
+                    <span class="text text--small">Te contactaremos para invitarte a una pequeña charla en la biblioteca o virtual.</span>
+                  </div>
+                </li>
+
+                <li class="info-item" id="colab-info-3">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Transparencia y comunidad</strong>
+                    <span class="text text--small">Todas las donaciones y actividades son administradas de forma pública y comunitaria.</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="map-block" id="colaboracion-help-block" style="background-color: var(--color-fondo); padding: var(--space-sm); border-radius: var(--radius-sm); border: 1px solid var(--color-borde);">
+                <h3 class="heading heading--sm" id="colaboracion-help-title" style="margin-bottom: 4px;">¿Tenés alguna duda específica?</h3>
+                <p class="text text--small" id="colaboracion-help-desc">Podés escribirnos directamente a nuestro correo <a class="link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a> o acercarte al Parque Saavedra.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (organismo .footer) ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+          <div class="footer__social" id="footer-social-group">
+            <a class="icon" id="footer-social-instagram" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a class="icon" id="footer-social-facebook" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function selectPlan(planName) {
+      const tipoSelect = document.getElementById('tipo-colaboracion');
+      const mensajeTextarea = document.getElementById('mensaje');
+      if (tipoSelect) {
+        tipoSelect.value = 'donacion-economica';
+      }
+      if (mensajeTextarea) {
+        mensajeTextarea.value = 'Quiero sumarme al plan: ' + planName + '.';
+      }
+    }
+
+    function handleFormSubmit(event, successMessage) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const feedback = form.querySelector('.form-feedback') || document.getElementById(form.id + '-feedback');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      if (feedback) {
+        feedback.className = 'form-feedback form-feedback--active form-feedback--loading';
+        feedback.setAttribute('role', 'status');
+        feedback.innerHTML = '<span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; animation: spin 1s linear infinite;" fill="none" stroke="currentColor"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-width="2" stroke-linecap="round"/></svg></span> Validando y procesando tu envío...';
+      }
+
+      setTimeout(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+
+        if (feedback) {
+          feedback.className = 'form-feedback form-feedback--active form-feedback--success';
+          feedback.setAttribute('role', 'alert');
+          feedback.innerHTML = '<span class="icon" aria-hidden="true" style="color:#137333; flex-shrink:0;"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px;" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> ' + successMessage;
+        }
+
+        form.reset();
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Del otro lado del árbol — Noticias</title>
+  <meta name="description" content="Novedades, anuncios institucionales, registros de eventos y noticias de la Biblioteca Popular Del otro lado del árbol.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" id="skip-to-content-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html" aria-current="page">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-grid" id="noticias-page-grid">
+
+      <!-- ============ SECCIÓN NOTICIAS (organismo .news-section) ============ -->
+      <section class="news-section" id="noticias-main-section" aria-labelledby="noticias-title">
+
+        <!-- Encabezado descriptivo de noticias -->
+        <div class="news-section__header" id="noticias-main-header" style="flex-direction: column; align-items: flex-start; gap: var(--space-xs);">
+          <h1 class="heading heading--display" id="noticias-title">Noticias y novedades</h1>
+          <p class="text" id="noticias-lead-text">Mantenete al día con los eventos, donaciones recibidas, publicaciones y comunicados de nuestra comunidad lectora.</p>
+        </div>
+
+        <!-- Grilla de tarjetas de noticias (.news-card) -->
+        <div class="news-section__grid" id="noticias-cards-grid">
+
+          <article class="news-card" id="noticia-card-1">
+            <img class="img news-card__image" id="noticia-img-1" src="img/airelibre.webp" alt="Chicas y chicos reunidos en el jardín escuchando cuentos al aire libre" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="noticia-body-1">
+              <h2 class="heading heading--base" id="noticia-title-1">Nueva jornada de cuentacuentos</h2>
+              <p class="text text--small" id="noticia-desc-1">Revivimos una hermosa tarde primaveral repleta de historias, canciones y sonrisas compartidas en el Parque Saavedra.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="noticia-card-2">
+            <img class="img news-card__image" id="noticia-img-2" src="img/donacion.jpg" alt="Voluntarios clasificando cajas de libros donados" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="noticia-body-2">
+              <h2 class="heading heading--base" id="noticia-title-2">Gran donación de literatura infantil</h2>
+              <p class="text text--small" id="noticia-desc-2">Agradecemos profundamente a las familias e instituciones que donaron más de 200 ejemplares en excelente estado.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="noticia-card-3">
+            <img class="img news-card__image" id="noticia-img-3" src="img/activity-plastica.jpg" alt="Participantes compartiendo sus producciones en el taller creativo" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="noticia-body-3">
+              <h2 class="heading heading--base" id="noticia-title-3">Cierre del taller de expresión narrativa</h2>
+              <p class="text text--small" id="noticia-desc-3">Con gran entusiasmo celebramos la lectura colectiva de las producciones creadas durante el ciclo de encuentros.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="noticia-card-4">
+            <img class="img news-card__image" id="noticia-img-4" src="img/evento2.webp" alt="Visita guiada de estudiantes de escuela primaria a la biblioteca" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="noticia-body-4">
+              <h2 class="heading heading--base" id="noticia-title-4">Visitas escolares en el Parque Saavedra</h2>
+              <p class="text text--small" id="noticia-desc-4">Recibimos a escuelas de la región para recorrer nuestro espacio de lectura e incentivar el amor por los libros.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="noticia-card-5">
+            <img class="img news-card__image" id="noticia-img-5" src="img/pilar.jpg" alt="Encuentro de bibliotecas populares y representantes comunitarios" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="noticia-body-5">
+              <h2 class="heading heading--base" id="noticia-title-5">Encuentro regional de la Red Pilar</h2>
+              <p class="text text--small" id="noticia-desc-5">Compartimos experiencias y proyectos conjuntos para fortalecer la promoción de la lectura comunitaria.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="noticia-card-6">
+            <img class="img news-card__image" id="noticia-img-6" src="img/activity-lectura.jpg" alt="Nuevas estanterías y mobiliario de lectura instalados en la biblioteca" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="noticia-body-6">
+              <h2 class="heading heading--base" id="noticia-title-6">Renovamos nuestros rincones de lectura</h2>
+              <p class="text text--small" id="noticia-desc-6">Sumamos nuevo mobiliario y almohadones para brindar una experiencia aún más cómoda y acogedora a los lectores.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (organismo .footer) ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+          <div class="footer__social" id="footer-social-group">
+            <a class="icon" id="footer-social-instagram" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a class="icon" id="footer-social-facebook" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

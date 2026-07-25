@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Del otro lado del árbol — Contacto</title>
+  <meta name="description" content="Comunicate con la Biblioteca Popular Del otro lado del árbol. Consultas, visitas guiadas, ubicación en Parque Saavedra y horarios de atención.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" id="skip-to-content-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html" aria-current="page">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-grid" id="contacto-page-grid">
+
+      <!-- ============ SECCIÓN CONTACTO (.contact-section) ============ -->
+      <section class="contact-section" id="contacto-main-section" aria-labelledby="contacto-title">
+        <div class="contact-section__inner" id="contacto-inner">
+
+          <!-- Encabezado descriptivo de contacto -->
+          <div class="contact-section__header" id="contacto-header">
+            <h1 class="heading heading--display" id="contacto-title">Contacto</h1>
+            <p class="text" id="contacto-lead-text" style="margin-top: var(--space-xs);">
+              ¿Tenés alguna duda, sugerencia o querés coordinar una visita escolar? Escribinos y con gusto te responderemos a la brevedad.
+            </p>
+          </div>
+
+          <!-- Grilla de Contacto (Formulario + Información y Mapa) -->
+          <div class="contact-grid" id="contacto-grid">
+
+            <!-- Columna Izquierda: Formulario de mensaje -->
+            <div class="contact-form-block" id="contacto-form-block">
+              <h2 class="heading heading--lg" id="contacto-form-title" style="margin-bottom: var(--space-sm);">Envianos tu mensaje</h2>
+              
+              <form class="contact-section__form" id="contacto-form" action="#" method="post" onsubmit="handleFormSubmit(event, '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto con vos.');">
+
+                <div class="form-field" id="form-field-nombre">
+                  <label class="label" id="label-nombre" for="nombre">Nombre completo *</label>
+                  <input class="input" id="nombre" type="text" name="nombre" placeholder="Escribí tu nombre" required minlength="2" autocomplete="name">
+                </div>
+
+                <div class="form-field" id="form-field-email">
+                  <label class="label" id="label-email" for="email">Correo electrónico *</label>
+                  <input class="input" id="email" type="email" name="email" placeholder="ejemplo@correo.com" required autocomplete="email">
+                </div>
+
+                <div class="form-field" id="form-field-asunto">
+                  <label class="label" id="label-asunto" for="asunto">Asunto o motivo de consulta *</label>
+                  <select class="input" id="asunto" name="asunto" required>
+                    <option value="" disabled selected>Seleccioná un asunto</option>
+                    <option value="consulta-general">Consulta general</option>
+                    <option value="visita-escolar">Coordinación de visita escolar</option>
+                    <option value="prestamos-socio">Información sobre préstamos y socios</option>
+                    <option value="actividades">Consulta sobre actividades o talleres</option>
+                    <option value="prensa-difusion">Prensa o difusión</option>
+                  </select>
+                </div>
+
+                <div class="form-field" id="form-field-mensaje">
+                  <label class="label" id="label-mensaje" for="mensaje">Mensaje *</label>
+                  <textarea class="input" id="mensaje" name="mensaje" placeholder="Escribí tu consulta detallada aquí..." required minlength="5" style="min-height: 120px;"></textarea>
+                </div>
+
+                <button class="btn" id="contacto-submit-btn" type="submit" style="align-self: flex-start; margin-top: var(--space-xs);">
+                  Enviar mensaje
+                </button>
+
+                <div class="form-feedback" id="contacto-form-feedback" aria-live="polite"></div>
+
+              </form>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta con detalles de información y mapa -->
+            <div class="contact-info-card" id="contacto-info-card">
+              <h2 class="heading heading--lg" id="contacto-info-title">Información de atención</h2>
+
+              <ul class="info-list" id="contacto-info-list">
+                <li class="info-item" id="info-item-ubicacion">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Ubicación:</strong>
+                    <span class="text text--small">Parque Saavedra, Calle 14 y 66, La Plata, Buenos Aires.</span>
+                  </div>
+                </li>
+
+                <li class="info-item" id="info-item-horarios">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Horarios de apertura:</strong>
+                    <span class="text text--small">Lunes a Viernes: 14:00 a 18:00 hs</span><br>
+                    <span class="text text--small">Sábados: 10:00 a 13:00 hs</span>
+                  </div>
+                </li>
+
+                <li class="info-item" id="info-item-email">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Correo electrónico:</strong>
+                    <a class="link text--small" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a>
+                  </div>
+                </li>
+
+                <li class="info-item" id="info-item-telefono">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <div>
+                    <strong class="heading heading--sm" style="display: block;">Teléfono / WhatsApp:</strong>
+                    <a class="link text--small" href="tel:+541112345678">11 1234 5678</a>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- Sección del Mapa Interactivo -->
+              <div class="map-block" id="contacto-map-block">
+                <h3 class="heading heading--sm" id="contacto-map-title" style="margin-bottom: var(--space-xs);">¿Cómo llegar?</h3>
+                <div class="map-container" id="contacto-map-container">
+                  <iframe 
+                    title="Mapa de ubicación de la Biblioteca Del otro lado del árbol en Parque Saavedra" 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-57.9480%2C-34.9330%2C-57.9380%2C-34.9250&amp;layer=mapnik&amp;marker=-34.9290%2C-57.9430" 
+                    loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (organismo .footer) ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+          <div class="footer__social" id="footer-social-group">
+            <a class="icon" id="footer-social-instagram" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a class="icon" id="footer-social-facebook" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleFormSubmit(event, successMessage) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const feedback = form.querySelector('.form-feedback') || document.getElementById(form.id + '-feedback');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      if (feedback) {
+        feedback.className = 'form-feedback form-feedback--active form-feedback--loading';
+        feedback.setAttribute('role', 'status');
+        feedback.innerHTML = '<span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; animation: spin 1s linear infinite;" fill="none" stroke="currentColor"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-width="2" stroke-linecap="round"/></svg></span> Validando y procesando tu envío...';
+      }
+
+      setTimeout(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+
+        if (feedback) {
+          feedback.className = 'form-feedback form-feedback--active form-feedback--success';
+          feedback.setAttribute('role', 'alert');
+          feedback.innerHTML = '<span class="icon" aria-hidden="true" style="color:#137333; flex-shrink:0;"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px;" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> ' + successMessage;
+        }
+
+        form.reset();
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

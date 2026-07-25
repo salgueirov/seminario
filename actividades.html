@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Del otro lado del árbol — Actividades</title>
+  <meta name="description" content="Agenda de actividades, talleres culturales, clubes de lectura y jornadas comunitarias en la Biblioteca Popular Del otro lado del árbol.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" id="skip-to-content-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html" aria-current="page">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-grid" id="actividades-page-grid">
+
+      <!-- ============ SECCIÓN ACTIVIDADES (organismo .activities-section) ============ -->
+      <section class="activities-section" id="actividades-main-section" aria-labelledby="actividades-title">
+
+        <!-- Encabezado descriptivo -->
+        <div class="activities-section__header" id="actividades-main-header" style="flex-direction: column; align-items: flex-start; gap: var(--space-xs);">
+          <h1 class="heading heading--display" id="actividades-title">Agenda de actividades</h1>
+          <p class="text" id="actividades-lead-text">Participá de nuestros talleres, jornadas de lectura, espectáculos culturales y encuentros comunitarios abiertos a todas las edades en la biblioteca y el Parque Saavedra.</p>
+        </div>
+
+        <!-- Grilla de tarjetas de actividades -->
+        <div class="activities-section__grid" id="actividades-cards-grid">
+
+          <article class="activity-card" id="actividad-card-1">
+            <img class="img activity-card__image" id="actividad-img-1" src="img/activity-lectura.jpg" alt="Grupo de personas participando de un taller de lectura" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="actividad-body-1">
+              <div class="activity-card__meta text text--small" id="actividad-meta-1">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Sábado 15 de agosto · 16 h
+              </div>
+              <h2 class="heading heading--base" id="actividad-title-1">Taller de lectura en comunidad</h2>
+              <p class="text text--small" id="actividad-desc-1">Un espacio participativo para compartir lecturas reflexivas, descubrir nuevos libros y debatir en comunidad.</p>
+            </div>
+            <button class="btn" id="actividad-btn-1" type="button" onclick="openRegistrationModal('Taller de lectura en comunidad')">Inscribirme</button>
+          </article>
+
+          <article class="activity-card" id="actividad-card-2">
+            <img class="img activity-card__image" id="actividad-img-2" src="img/evento.jpg" alt="Niñas y niños participando de un club de lectura" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="actividad-body-2">
+              <div class="activity-card__meta text text--small" id="actividad-meta-2">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Miércoles 19 de agosto · 18 h
+              </div>
+              <h2 class="heading heading--base" id="actividad-title-2">Club de lectura infantil</h2>
+              <p class="text text--small" id="actividad-desc-2">Encuentro mensual interactivo donde chicos y chicas exploran historias, personajes e ilustraciones divertidas.</p>
+            </div>
+            <button class="btn" id="actividad-btn-2" type="button" onclick="openRegistrationModal('Club de lectura infantil')">Inscribirme</button>
+          </article>
+
+          <article class="activity-card" id="actividad-card-3">
+            <img class="img activity-card__image" id="actividad-img-3" src="img/airelibre.webp" alt="Narración de cuentos al aire libre en el jardín de la biblioteca" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="actividad-body-3">
+              <div class="activity-card__meta text text--small" id="actividad-meta-3">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Domingo 23 de agosto · 17 h
+              </div>
+              <h2 class="heading heading--base" id="actividad-title-3">Cuentacuentos en el jardín</h2>
+              <p class="text text--small" id="actividad-desc-3">Jornada al aire libre con susurradores de cuentos, títeres y narraciones orales para disfrutar en familia.</p>
+            </div>
+            <button class="btn" id="actividad-btn-3" type="button" onclick="openRegistrationModal('Cuentacuentos en el jardín')">Inscribirme</button>
+          </article>
+
+          <article class="activity-card" id="actividad-card-4">
+            <img class="img activity-card__image" id="actividad-img-4" src="img/activity-plastica.jpg" alt="Niños y familias dibujando y realizando talleres de arte en la biblioteca" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="actividad-body-4">
+              <div class="activity-card__meta text text--small" id="actividad-meta-4">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Sábado 29 de agosto · 15 h
+              </div>
+              <h2 class="heading heading--base" id="actividad-title-4">Taller de plástica y expresión creadora</h2>
+              <p class="text text--small" id="actividad-desc-4">Espacio de experimentación con pintura, collage y modelado a partir de la lectura de cuentos ilustrados.</p>
+            </div>
+            <button class="btn" id="actividad-btn-4" type="button" onclick="openRegistrationModal('Taller de plástica y expresión creadora')">Inscribirme</button>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- Modal Flotante de Inscripción a Actividades -->
+      <div class="modal" id="inscripcion-modal" role="dialog" aria-modal="true" aria-labelledby="actividades-form-title" aria-hidden="true">
+        <div class="modal__overlay" id="modal-overlay" onclick="closeRegistrationModal()"></div>
+        <div class="modal__container" id="modal-container">
+          <button class="modal__close" id="modal-close-btn" type="button" aria-label="Cerrar formulario de inscripción" onclick="closeRegistrationModal()">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="contact-form-block" id="actividades-form-block">
+            <h2 class="heading heading--lg" id="actividades-form-title" style="margin-bottom: var(--space-xs);">Inscripción a Actividades</h2>
+            <p class="text text--small" id="actividades-form-subtitle" style="margin-bottom: var(--space-sm);">Completá este formulario para reservar tu lugar en nuestros talleres y encuentros culturales. La participación es libre y gratuita.</p>
+
+            <form class="contact-section__form" id="actividades-form" action="#" method="post" onsubmit="handleFormSubmit(event, '¡Inscripción confirmada! Reservamos tu lugar con éxito. Te enviamos los detalles a tu correo electrónico.');">
+
+              <div class="form-field" id="form-field-actividad-select">
+                <label class="label" id="label-actividad-select" for="actividad-select">Actividad a la que deseas inscribirte *</label>
+                <select class="input" id="actividad-select" name="actividad" required>
+                  <option value="" disabled selected>Seleccioná una actividad</option>
+                  <option value="Taller de lectura en comunidad">Taller de lectura en comunidad (Sáb 15 Ago · 16 h)</option>
+                  <option value="Club de lectura infantil">Club de lectura infantil (Mié 19 Ago · 18 h)</option>
+                  <option value="Cuentacuentos en el jardín">Cuentacuentos en el jardín (Dom 23 Ago · 17 h)</option>
+                  <option value="Taller de plástica y expresión creadora">Taller de plástica y expresión creadora (Sáb 29 Ago · 15 h)</option>
+                  <option value="Otra actividad">Otra actividad / Consulta general</option>
+                </select>
+              </div>
+
+              <div class="form-field" id="form-field-nombre-actividad">
+                <label class="label" id="label-nombre-actividad" for="nombre-actividad">Nombre y apellido del participante / responsable *</label>
+                <input class="input" id="nombre-actividad" type="text" name="nombre" placeholder="Escribí tu nombre completo" required minlength="2" autocomplete="name">
+              </div>
+
+              <div class="form-field" id="form-field-email-actividad">
+                <label class="label" id="label-email-actividad" for="email-actividad">Correo electrónico *</label>
+                <input class="input" id="email-actividad" type="email" name="email" placeholder="ejemplo@correo.com" required autocomplete="email">
+              </div>
+
+              <div class="form-field" id="form-field-telefono-actividad">
+                <label class="label" id="label-telefono-actividad" for="telefono-actividad">Teléfono de contacto *</label>
+                <input class="input" id="telefono-actividad" type="tel" name="telefono" placeholder="11 1234 5678" required pattern="[0-9\s\+\-\(\)]{6,20}" autocomplete="tel">
+              </div>
+
+              <div class="form-field" id="form-field-asistentes-actividad">
+                <label class="label" id="label-asistentes-actividad" for="asistentes-actividad">Cantidad de asistentes *</label>
+                <input class="input" id="asistentes-actividad" type="number" name="asistentes" min="1" max="10" value="1" required>
+              </div>
+
+              <div class="form-field" id="form-field-observaciones-actividad">
+                <label class="label" id="label-observaciones-actividad" for="observaciones-actividad">Edades de participantes o notas adicionales</label>
+                <textarea class="input" id="observaciones-actividad" name="observaciones" placeholder="Por ejemplo: Asisto con 2 niños de 6 y 8 años / Requerimientos de accesibilidad..." style="min-height: 90px;"></textarea>
+              </div>
+
+              <button class="btn" id="actividades-submit-btn" type="submit" style="align-self: flex-start; margin-top: var(--space-xs);">
+                Confirmar inscripción
+              </button>
+
+              <div class="form-feedback" id="actividades-form-feedback" aria-live="polite"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (organismo .footer) ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+          <div class="footer__social" id="footer-social-group">
+            <a class="icon" id="footer-social-instagram" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a class="icon" id="footer-social-facebook" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function openRegistrationModal(activityName) {
+      const modal = document.getElementById('inscripcion-modal');
+      const selectEl = document.getElementById('actividad-select');
+      if (selectEl && activityName) {
+        selectEl.value = activityName;
+      }
+      if (modal) {
+        modal.classList.add('modal--active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const firstInput = modal.querySelector('input:not([disabled]), select:not([disabled])');
+        if (firstInput) {
+          setTimeout(function() { firstInput.focus(); }, 120);
+        }
+      }
+    }
+
+    function closeRegistrationModal() {
+      const modal = document.getElementById('inscripcion-modal');
+      if (modal) {
+        modal.classList.remove('modal--active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeRegistrationModal();
+      }
+    });
+
+    function handleFormSubmit(event, successMessage) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const feedback = form.querySelector('.form-feedback') || document.getElementById(form.id + '-feedback');
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Procesando...';
+
+      if (feedback) {
+        feedback.className = 'form-feedback form-feedback--active form-feedback--loading';
+        feedback.setAttribute('role', 'status');
+        feedback.innerHTML = '<span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; animation: spin 1s linear infinite;" fill="none" stroke="currentColor"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-width="2" stroke-linecap="round"/></svg></span> Reservando tu vacante...';
+      }
+
+      setTimeout(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+
+        if (feedback) {
+          feedback.className = 'form-feedback form-feedback--active form-feedback--success';
+          feedback.setAttribute('role', 'alert');
+          feedback.innerHTML = '<span class="icon" aria-hidden="true" style="color:#137333; flex-shrink:0;"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px;" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> ' + successMessage;
+        }
+
+        form.reset();
+        setTimeout(function() {
+          closeRegistrationModal();
+        }, 2200);
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

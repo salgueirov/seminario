@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Del otro lado del árbol — Catálogo</title>
+  <meta name="description" content="Explorá el catálogo de libros infantiles, juveniles y de literatura general de la Biblioteca Popular Del otro lado del árbol.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" id="skip-to-content-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html" aria-current="page">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="page-grid" id="catalogo-page-grid">
+
+      <!-- ============ SECCIÓN CATÁLOGO (organismo .catalog-section) ============ -->
+      <section class="catalog-section" id="catalogo-main-section" aria-labelledby="catalogo-title">
+
+        <!-- Encabezado descriptivo del catálogo -->
+        <div class="catalog-section__header" id="catalogo-main-header" style="flex-direction: column; align-items: flex-start; gap: var(--space-xs);">
+          <h1 class="heading heading--display" id="catalogo-title">Catálogo de libros</h1>
+          <p class="text" id="catalogo-lead-text">Explorá nuestra colección de libros infantiles, juveniles y literatura general disponibles para lectura en sala y préstamo domiciliario.</p>
+        </div>
+
+        <!-- Molécula Barra de búsqueda (.search-bar) -->
+        <form class="search-bar" id="catalogo-search-form" style="margin-bottom: var(--space-lg);" role="search" onsubmit="event.preventDefault();">
+          <input class="input" id="catalogo-search-input" type="search" name="q" placeholder="Buscar por título, autor, género o tema..." aria-label="Buscar libros en el catálogo">
+          <button class="search-bar__button" id="catalogo-search-submit" type="submit" aria-label="Buscar">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+          </button>
+        </form>
+
+        <!-- Grilla de tarjetas de libros (.book-card) -->
+        <div class="catalog-section__grid" id="catalogo-books-grid">
+
+          <article class="book-card" id="book-card-1">
+            <img class="img book-card__image" id="book-img-1" src="img/El-Árbol-Generoso-portada.jpg" alt="Portada original de El árbol generoso" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-1">El árbol generoso</h2>
+            <p class="text text--small" id="book-author-1">Shel Silverstein</p>
+          </article>
+
+          <article class="book-card" id="book-card-2">
+            <img class="img book-card__image" id="book-img-2" src="img/cuentosdelaselva.jpeg" alt="Portada original de Cuentos de la selva" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-2">Cuentos de la selva</h2>
+            <p class="text text--small" id="book-author-2">Horacio Quiroga</p>
+          </article>
+
+          <article class="book-card" id="book-card-3">
+            <img class="img book-card__image" id="book-img-3" src="img/maurice-sendak-donde-viven-los-monstruos.jpg" alt="Portada original de Donde viven los monstruos" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-3">Donde viven los monstruos</h2>
+            <p class="text text--small" id="book-author-3">Maurice Sendak</p>
+          </article>
+
+          <article class="book-card" id="book-card-4">
+            <img class="img book-card__image" id="book-img-4" src="img/laplantadebartolo.jpg" alt="Portada original de La planta de Bartolo" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-4">La planta de Bartolo</h2>
+            <p class="text text--small" id="book-author-4">Laura Devetach</p>
+          </article>
+
+          <article class="book-card" id="book-card-5">
+            <img class="img book-card__image" id="book-img-5" src="img/tengounmonstruo.jpg" alt="Portada original de Tengo un monstruo en el bolsillo" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-5">Tengo un monstruo en el bolsillo</h2>
+            <p class="text text--small" id="book-author-5">Graciela Montes</p>
+          </article>
+
+          <article class="book-card" id="book-card-6">
+            <img class="img book-card__image" id="book-img-6" src="img/elmonte.jpg" alt="Portada original de El monte era una fiesta" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-6">El monte era una fiesta</h2>
+            <p class="text text--small" id="book-author-6">Gustavo Roldán</p>
+          </article>
+
+          <article class="book-card" id="book-card-7">
+            <img class="img book-card__image" id="book-img-7" src="img/el-arbol-de-los-flecos.webp" alt="Portada original de El árbol de los flecos" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-7">El árbol de los flecos</h2>
+            <p class="text text--small" id="book-author-7">María Teresa Andruetto</p>
+          </article>
+
+          <article class="book-card" id="book-card-8">
+            <img class="img book-card__image" id="book-img-8" src="img/rafaela.jpg" alt="Portada original de Rafaela" referrerPolicy="no-referrer">
+            <h2 class="heading heading--base" id="book-title-8">Rafaela</h2>
+            <p class="text text--small" id="book-author-8">Mariana Furiasse</p>
+          </article>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (organismo .footer) ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+          <div class="footer__social" id="footer-social-group">
+            <a class="icon" id="footer-social-instagram" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a class="icon" id="footer-social-facebook" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

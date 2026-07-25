@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Diseño — Biblioteca Popular Del otro lado del árbol</title>
+  <meta name="description" content="Documentación completa del Sistema de Diseño y Guía de Estilos de la Biblioteca Popular Del otro lado del árbol: Átomos, Moléculas, Organismos y Tokens.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos de apoyo exclusivos para la exhibición interactiva del Sistema de Diseño */
+    .ds-section {
+      margin-bottom: var(--space-lg);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-borde);
+    }
+    .ds-section:first-of-type {
+      border-top: none;
+    }
+    .ds-section__title {
+      margin-bottom: var(--space-xs);
+    }
+    .ds-section__desc {
+      margin-bottom: var(--space-md);
+      color: #555;
+    }
+    .ds-nav {
+      position: sticky;
+      top: var(--header-height);
+      z-index: 90;
+      background-color: var(--color-superficie);
+      border-bottom: 1px solid var(--color-borde);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: var(--space-md);
+    }
+    .ds-nav__list {
+      display: flex;
+      gap: var(--space-sm);
+      overflow-x: auto;
+      padding-block: var(--space-xs);
+      white-space: nowrap;
+    }
+    .ds-nav__link {
+      font-size: var(--font-size-small);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-accion);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: background-color 0.15s ease;
+    }
+    .ds-nav__link:hover {
+      background-color: var(--color-apoyo);
+    }
+    .ds-grid-colors {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--space-sm);
+    }
+    .ds-color-card {
+      background-color: var(--color-superficie);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .ds-color-card__swatch {
+      height: 90px;
+      width: 100%;
+    }
+    .ds-color-card__body {
+      padding: var(--space-xs) var(--space-sm);
+    }
+    .ds-color-card__name {
+      display: block;
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-base);
+    }
+    .ds-token-code {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.8rem;
+      background-color: rgba(0,0,0,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+    .ds-component-preview {
+      background-color: var(--color-superficie);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      box-shadow: var(--shadow-card);
+    }
+    .ds-component-preview__title {
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-base);
+      color: var(--color-accion);
+      margin-bottom: var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ds-component-preview__subtitle {
+      font-size: var(--font-size-small);
+      color: #666;
+      margin-bottom: var(--space-sm);
+    }
+    .ds-flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .ds-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-sm);
+      font-size: var(--font-size-small);
+      background-color: var(--color-superficie);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-borde);
+    }
+    .ds-table th, .ds-table td {
+      padding: var(--space-xs) var(--space-sm);
+      text-align: left;
+      border-bottom: 1px solid var(--color-borde);
+    }
+    .ds-table th {
+      background-color: var(--color-apoyo);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-texto);
+    }
+    .ds-box-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-sm);
+    }
+    .ds-box-sample {
+      padding: var(--space-sm);
+      background-color: var(--color-superficie);
+      border: 1px solid var(--color-borde);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .ds-badge-atom {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: #E8F5E9;
+      color: #2E7D32;
+    }
+    .ds-badge-molecule {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: #E3F2FD;
+      color: #1565C0;
+    }
+    .ds-badge-organism {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: #FFF3E0;
+      color: #E65100;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" id="ds-skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html" aria-current="page">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ORGANISMO: HERO CABECERA ============ -->
+    <section class="ds-hero" id="ds-hero">
+      <div class="container ds-hero__container" id="ds-hero-container">
+        <h1 class="heading ds-hero__title" id="ds-hero-title">Sistema de Diseño &amp; Guía de Componentes</h1>
+        <p class="text ds-hero__lead" id="ds-hero-lead">
+          Documentación técnica y biblioteca de componentes atómicos, moléculas y organismos de la <strong>Biblioteca Popular "Del otro lado del árbol"</strong>. Construido bajo las metodologías <strong>Atomic Design</strong> y <strong>BEM</strong>, garantizando accesibilidad (WCAG 2.1 AA), respuesta adaptable mobile-first y coherencia visual en todo el sitio.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ STICKY QUICK NAV ============ -->
+    <nav class="ds-nav" id="ds-quick-nav" aria-label="Navegación rápida del sistema de diseño">
+      <div class="container" id="ds-quick-nav-container">
+        <ul class="ds-nav__list" id="ds-quick-nav-list">
+          <li><a class="ds-nav__link" id="quick-link-tokens" href="#tokens">1. Design Tokens</a></li>
+          <li><a class="ds-nav__link" id="quick-link-atomos" href="#atomos">2. Átomos</a></li>
+          <li><a class="ds-nav__link" id="quick-link-moleculas" href="#moleculas">3. Moléculas</a></li>
+          <li><a class="ds-nav__link" id="quick-link-organismos" href="#organismos">4. Organismos</a></li>
+          <li><a class="ds-nav__link" id="quick-link-layout" href="#layout">5. Layout & Grilla</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id="ds-content-container">
+
+      <!-- ==========================================================================
+         1. DESIGN TOKENS
+         ========================================================================== -->
+      <section class="ds-section" id="tokens">
+        <div class="ds-section__title" id="title-tokens">
+          <h2 class="heading heading--lg">1. Custom Properties — Design Tokens</h2>
+        </div>
+        <p class="text ds-section__desc">
+          Variables globales definidas en <code>:root</code> que configuran los fundamentos visuales de la interfaz: color, tipografía, espaciado y radios.
+        </p>
+
+        <!-- Paleta de Colores -->
+        <div class="ds-component-preview" id="ds-tokens-colors-box">
+          <div class="ds-component-preview__title" id="ds-tokens-colors-title">
+            <span class="ds-badge-atom">Tokens</span> Paleta de Colores de Marca y Accesibilidad
+          </div>
+          <p class="ds-component-preview__subtitle">Cumplen con el ratio de contraste de legibilidad WCAG 2.1 AA sobre fondo claro.</p>
+
+          <div class="ds-grid-colors" id="color-swatches-grid">
+
+            <div class="ds-color-card" id="swatch-accion">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-accion);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Verde Acción</span>
+                <code class="ds-token-code">--color-accion: #4A7C59</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Botones primarios, enlaces activos, foco de teclado y color institucional.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-destacado">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-destacado);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Naranja Destacado</span>
+                <code class="ds-token-code">--color-destacado: #F4A259</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Botones de donación CTA, llamados a la acción secundarios e insignias cálidas.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-apoyo">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-apoyo);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Verde Apoyo</span>
+                <code class="ds-token-code">--color-apoyo: #A8D5BA</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Fondos ilustrativos, hover suave en navegación y cabeceras de tablas.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-fondo">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-fondo); border-bottom: 1px solid var(--color-borde);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Crema Fondo</span>
+                <code class="ds-token-code">--color-fondo: #FAF8F2</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Fondo principal cálido del sitio, previene el deslumbramiento y la fatiga visual.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-superficie">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-superficie); border-bottom: 1px solid var(--color-borde);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Blanco Superficie</span>
+                <code class="ds-token-code">--color-superficie: #FFFFFF</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Contenedores de tarjetas, campos de formulario, menús y ventanas desplegables.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-texto">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-texto);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Gris Texto Neutro</span>
+                <code class="ds-token-code">--color-texto: #2D2D2D</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Color principal para textos y títulos, optimizado para alto contraste lectura.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-borde">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-borde);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Gris Borde</span>
+                <code class="ds-token-code">--color-borde: #D9D9D9</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Líneas divisorias, contornos de controles e inputs sin foco.</p>
+              </div>
+            </div>
+
+            <div class="ds-color-card" id="swatch-error">
+              <div class="ds-color-card__swatch" style="background-color: var(--color-error);"></div>
+              <div class="ds-color-card__body">
+                <span class="ds-color-card__name">Rojo Error</span>
+                <code class="ds-token-code">--color-error: #C0392B</code>
+                <p class="text text--small" style="margin-top:4px; color:#666;">Indicadores de error en validación de campos de formulario e instrucciones.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Escala de Tipografía -->
+        <div class="ds-component-preview" id="ds-tokens-typography-box">
+          <div class="ds-component-preview__title" id="ds-tokens-typography-title">
+            <span class="ds-badge-atom">Tokens</span> Jerarquía Tipográfica ('Inter')
+          </div>
+          <div class="ds-table-wrapper">
+            <table class="ds-table" id="typography-scale-table">
+              <thead>
+                <tr>
+                  <th>Clase / Token</th>
+                  <th>Tamaño / Line-height</th>
+                  <th>Peso (Weight)</th>
+                  <th>Visualización en Vivo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code class="ds-token-code">.heading--display</code></td>
+                  <td>1.85rem - 3rem (1.2)</td>
+                  <td>Bold (700)</td>
+                  <td><span class="heading heading--display" style="font-size:1.8rem;">Título Hero Display</span></td>
+                </tr>
+                <tr>
+                  <td><code class="ds-token-code">.heading--lg</code></td>
+                  <td>1.35rem - 1.5rem (1.25)</td>
+                  <td>Bold (700)</td>
+                  <td><span class="heading heading--lg">Título de Sección Grande</span></td>
+                </tr>
+                <tr>
+                  <td><code class="ds-token-code">.heading--base</code></td>
+                  <td>1rem / 16px (1.4)</td>
+                  <td>Semibold (600)</td>
+                  <td><span class="heading heading--base">Título de Tarjeta / Subtítulo</span></td>
+                </tr>
+                <tr>
+                  <td><code class="ds-token-code">.text</code></td>
+                  <td>1rem / 16px (1.6)</td>
+                  <td>Regular (400)</td>
+                  <td><span class="text">Cuerpo de texto estándar para lectura fluida de párrafos.</span></td>
+                </tr>
+                <tr>
+                  <td><code class="ds-token-code">.text--small</code></td>
+                  <td>0.875rem / 14px (1.5)</td>
+                  <td>Regular (400)</td>
+                  <td><span class="text text--small">Texto secundario, bajadas de tarjeta y metadatos de pie de foto.</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Escala de Espaciado y Radios -->
+        <div class="ds-component-preview" id="ds-tokens-spacing-box">
+          <div class="ds-component-preview__title" id="ds-tokens-spacing-title">
+            <span class="ds-badge-atom">Tokens</span> Escala Modular de Espaciado, Bordes & Sombras
+          </div>
+          <div class="ds-box-row" id="spacing-tokens-grid">
+            <div class="ds-box-sample" id="sample-space-xs" style="border-radius: var(--radius-sm);">
+              <strong>--space-xs (8px)</strong>
+              <span class="text text--small">Separación interna de labels, badges y gap apretado.</span>
+              <div style="width: 100%; height: 8px; background-color: var(--color-accion); margin-top: 8px;"></div>
+            </div>
+            <div class="ds-box-sample" id="sample-space-sm" style="border-radius: var(--radius-sm);">
+              <strong>--space-sm (16px)</strong>
+              <span class="text text--small">Padding de inputs, margen entre campos y elementos.</span>
+              <div style="width: 100%; height: 16px; background-color: var(--color-accion); margin-top: 8px;"></div>
+            </div>
+            <div class="ds-box-sample" id="sample-space-md" style="border-radius: var(--radius-md);">
+              <strong>--space-md (32px)</strong>
+              <span class="text text--small">Padding de tarjetas grandes y separación entre secciones.</span>
+              <div style="width: 100%; height: 32px; background-color: var(--color-accion); margin-top: 8px;"></div>
+            </div>
+            <div class="ds-box-sample" id="sample-shadow-card" style="border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+              <strong>--shadow-card</strong>
+              <code class="ds-token-code">0 4px 12px rgba(0,0,0,.08)</code>
+              <span class="text text--small">Sombra suave para elevación de tarjetas y modales.</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ==========================================================================
+         2. ÁTOMOS
+         ========================================================================== -->
+      <section class="ds-section" id="atomos">
+        <div class="ds-section__title" id="title-atoms">
+          <h2 class="heading heading--lg">2. Componentes Atómicos</h2>
+        </div>
+        <p class="text ds-section__desc">
+          Bloques de construcción fundamentales e indivisibles de la interfaz de usuario.
+        </p>
+
+        <!-- ÁTOMO: BOTÓN (.btn) -->
+        <div class="ds-component-preview" id="atom-button-box">
+          <div class="ds-component-preview__title" id="atom-button-title">
+            <span class="ds-badge-atom">Átomo</span> Botones (<code>.btn</code>) — Variantes y Estados
+          </div>
+          <p class="ds-component-preview__subtitle">Control de acción con altura táctil estándar de 48px, bordes redondeados (8px) y transiciones fluidas.</p>
+
+          <div class="ds-flex-wrap" id="button-samples-flex" style="margin-bottom: var(--space-sm);">
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span class="text text--small" style="font-weight:600;">Primario Verde</span>
+              <button class="btn" id="ds-btn-primary" type="button">Botón Primario</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span class="text text--small" style="font-weight:600;">Llamado CTA (Naranja)</span>
+              <a class="btn header__cta" id="ds-btn-cta" href="#">Donar ahora</a>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span class="text text--small" style="font-weight:600;">Secundario</span>
+              <button class="btn btn--secondary" id="ds-btn-secondary" type="button">Ver catálogo</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+              <span class="text text--small" style="font-weight:600;">Estado Deshabilitado</span>
+              <button class="btn" id="ds-btn-disabled" type="button" disabled style="opacity:0.5; cursor:not-allowed;">No disponible</button>
+            </div>
+          </div>
+
+          <p class="text text--small" style="color:#666;">
+            <strong>Estados contemplados:</strong> <code>:hover</code> (oscurecimiento 8%), <code>:active</code> (desplazamiento 1px), <code>:focus-visible</code> (anillo de foco accesible de 3px), y <code>disabled</code> (opacidad 50%).
+          </p>
+        </div>
+
+        <!-- ÁTOMO: CAMPOS DE ENTRADA (input, select, textarea) -->
+        <div class="ds-component-preview" id="atom-inputs-box">
+          <div class="ds-component-preview__title" id="atom-inputs-title">
+            <span class="ds-badge-atom">Átomo</span> Entradas de Formulario (<code>.input</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Controles interactivos para recolección de datos con padding de 12px/16px y bordes responsivos.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-sm);" id="input-samples-grid">
+
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Input Texto Estándar</span>
+              <input class="input" id="ds-input-text-sample" type="text" placeholder="Ej: Juan Pérez">
+            </div>
+
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Input Correo (Email)</span>
+              <input class="input" id="ds-input-email-sample" type="email" placeholder="ejemplo@correo.com">
+            </div>
+
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Menú Desplegable (Select)</span>
+              <select class="input" id="ds-select-sample">
+                <option value="">Seleccioná una opción...</option>
+                <option value="consulta">Consulta general</option>
+                <option value="donacion">Donación de libros</option>
+                <option value="voluntariado">Ser voluntario/a</option>
+              </select>
+            </div>
+
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Estado con Error (<code>.input--error</code>)</span>
+              <input class="input input--error" id="ds-input-error-sample" type="text" value="Dato inválido">
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Área de Texto (Textarea)</span>
+              <textarea class="input" id="ds-textarea-sample" placeholder="Escribí tu mensaje o comentario aquí..."></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ÁTOMO: ETIQUETAS (.label) -->
+        <div class="ds-component-preview" id="atom-labels-box">
+          <div class="ds-component-preview__title" id="atom-labels-title">
+            <span class="ds-badge-atom">Átomo</span> Etiquetas e Insignias (<code>.label</code>)
+          </div>
+          <div class="ds-flex-wrap" id="labels-samples-flex">
+            <div>
+              <label class="label" id="ds-label-standard">Etiqueta Estándar</label>
+            </div>
+            <div>
+              <label class="label" id="ds-label-required">Campo Requerido <span style="color:var(--color-error)">*</span></label>
+            </div>
+            <div>
+              <span class="label label--tag" id="ds-tag-sample">Etiqueta Tag (.label--tag)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÁTOMO: ENLACES (.link) -->
+        <div class="ds-component-preview" id="atom-links-box">
+          <div class="ds-component-preview__title" id="atom-links-title">
+            <span class="ds-badge-atom">Átomo</span> Enlaces de Navegación (<code>.link</code>, <code>.header__nav-link</code>)
+          </div>
+          <div class="ds-flex-wrap" id="link-samples-flex">
+            <div>
+              <span class="text text--small" style="display:block; color:#666;">Enlace en texto</span>
+              <a class="link" id="ds-link-sample" href="#">Enlace estándar con subrayado hover</a>
+            </div>
+            <div>
+              <span class="text text--small" style="display:block; color:#666;">Enlace de menú activo</span>
+              <a class="header__nav-link" id="ds-nav-link-active" href="#" aria-current="page" style="background-color: var(--color-apoyo); padding: 6px 12px; border-radius: var(--radius-sm);">Sistema de diseño</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÁTOMO: ICONOS VECTORES SVG (.icon) -->
+        <div class="ds-component-preview" id="atom-icons-box">
+          <div class="ds-component-preview__title" id="atom-icons-title">
+            <span class="ds-badge-atom">Átomo</span> Iconografía Vectorial Inline (<code>.icon</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Iconos SVG limpios en 24x24px adaptables mediante <code>currentColor</code>.</p>
+          <div class="ds-flex-wrap" id="icon-samples-flex">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+              <span class="icon" id="ds-icon-search"><svg viewBox="0 0 24 24" style="width:24px; height:24px;" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2"/></svg></span>
+              <span class="text text--small">Búsqueda</span>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+              <span class="icon" id="ds-icon-check" style="color:#137333;"><svg viewBox="0 0 24 24" style="width:24px; height:24px;" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12" stroke-width="2"/></svg></span>
+              <span class="text text--small">Éxito</span>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+              <span class="icon" id="ds-icon-alert" style="color:#C0392B;"><svg viewBox="0 0 24 24" style="width:24px; height:24px;" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg></span>
+              <span class="text text--small">Alerta</span>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+              <span class="icon" id="ds-icon-spinner"><svg viewBox="0 0 24 24" style="width:24px; height:24px; animation: spin 1s linear infinite;" fill="none" stroke="currentColor"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span class="text text--small">Cargando</span>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+              <span class="icon" id="ds-icon-email"><svg viewBox="0 0 24 24" style="width:24px; height:24px;" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2" stroke-width="2"/><path d="M22 6l-10 7L2 6" stroke-width="2"/></svg></span>
+              <span class="text text--small">Email</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÁTOMO: IMÁGENES (.img) -->
+        <div class="ds-component-preview" id="atom-images-box">
+          <div class="ds-component-preview__title" id="atom-images-title">
+            <span class="ds-badge-atom">Átomo</span> Imágenes y Recursos Visuales (<code>.img</code>)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-sm);" id="image-samples-grid">
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Isotipo Marca (.header__logo-mark)</span>
+              <img class="header__logo-mark" id="ds-sample-logo-mark" src="img/logo.png" alt="Muestra Logo" width="48" height="48">
+            </div>
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Portada Libro Ratio 3:4</span>
+              <img class="img book-card__cover" id="ds-sample-book-cover" src="img/El-Árbol-Generoso-portada.jpg" alt="Muestra Portada" style="max-width:140px;">
+            </div>
+            <div>
+              <span class="text text--small" style="font-weight:600; display:block; margin-bottom:4px;">Imagen Paisaje 16:9</span>
+              <img class="img activity-card__image" id="ds-sample-landscape-img" src="img/placeholder-landscape.svg" alt="Muestra Paisaje">
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ==========================================================================
+         3. MOLÉCULAS
+         ========================================================================== -->
+      <section class="ds-section" id="moleculas">
+        <div class="ds-section__title" id="title-molecules">
+          <h2 class="heading heading--lg">3. Componentes Moléculas</h2>
+        </div>
+        <p class="text ds-section__desc">
+          Combinaciones funcionales de átomos que forman patrones reutilizables de la interfaz.
+        </p>
+
+        <!-- MOLÉCULA: FORM FIELD -->
+        <div class="ds-component-preview" id="molecule-form-field-box">
+          <div class="ds-component-preview__title" id="molecule-form-field-title">
+            <span class="ds-badge-molecule">Molécula</span> Campo de Formulario Completo (<code>.form-field</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Integra Label + Input + Mensaje de error/ayuda en una unidad accesible.</p>
+          <div style="max-width: 480px;">
+            <div class="form-field" id="ds-form-field-sample">
+              <label class="label" for="ds-field-input-email">Correo electrónico de contacto <span style="color:var(--color-error)">*</span></label>
+              <input class="input input--error" id="ds-field-input-email" type="email" value="correo-invalido@" aria-invalid="true">
+              <span class="input__error-message" id="ds-field-error-msg">Por favor ingresá un correo electrónico válido con formato nombre@dominio.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOLÉCULA: FORM FEEDBACK -->
+        <div class="ds-component-preview" id="molecule-form-feedback-box">
+          <div class="ds-component-preview__title" id="molecule-form-feedback-title">
+            <span class="ds-badge-molecule">Molécula</span> Mensajes de Feedback y Estado (<code>.form-feedback</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Muestra mensajes de confirmación, alerta o progreso dinámico tras enviar formularios.</p>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-xs);" id="feedback-samples-list">
+            <div class="form-feedback form-feedback--active form-feedback--loading" id="feedback-loading-sample">
+              <span class="icon"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px; animation: spin 1s linear infinite;" fill="none" stroke="currentColor"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" stroke-width="2" stroke-linecap="round"/></svg></span>
+              Procesando solicitud y enviando datos al servidor...
+            </div>
+
+            <div class="form-feedback form-feedback--active form-feedback--success" id="feedback-success-sample">
+              <span class="icon" style="color:#137333;"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px;" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              ¡Consulta o inscripción registrada con éxito! Nos pondremos en contacto pronto.
+            </div>
+
+            <div class="form-feedback form-feedback--active form-feedback--error" id="feedback-error-sample">
+              <span class="icon" style="color:#C0392B;"><svg viewBox="0 0 24 24" style="width: 18px; height: 18px;" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg></span>
+              Hubo un problema al procesar el formulario. Verificá los campos marcados en rojo.
+            </div>
+          </div>
+        </div>
+
+        <!-- MOLÉCULA: SEARCH BAR -->
+        <div class="ds-component-preview" id="molecule-search-bar-box">
+          <div class="ds-component-preview__title" id="molecule-search-bar-title">
+            <span class="ds-badge-molecule">Molécula</span> Barra de Búsqueda Integrada (<code>.search-bar</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Combina Input + Botón de submit en una sola línea flexible.</p>
+          <form class="search-bar" id="ds-search-bar-sample" style="max-width: 480px;" onsubmit="event.preventDefault();">
+            <input class="input search-bar__input" id="ds-search-input" type="search" placeholder="Buscar libros por título, autor o género...">
+            <button class="btn search-bar__button" id="ds-search-button" type="submit">Buscar</button>
+          </form>
+        </div>
+
+        <!-- MOLÉCULA: ACTIVITY CARD -->
+        <div class="ds-component-preview" id="molecule-activity-card-box">
+          <div class="ds-component-preview__title" id="molecule-activity-card-title">
+            <span class="ds-badge-molecule">Molécula</span> Tarjeta de Actividad (<code>.activity-card</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Componente adaptable con Container Queries para grilla de actividades y talleres.</p>
+
+          <div style="max-width: 380px;">
+            <article class="activity-card" id="ds-activity-card-sample">
+              <img class="img activity-card__image" id="ds-activity-img" src="img/placeholder-landscape.svg" alt="Taller de cuentacuentos en el parque">
+              <div class="activity-card__body" id="ds-activity-body">
+                <div class="activity-card__meta" id="ds-activity-meta">
+                  <span class="text text--small" style="color: var(--color-accion); font-weight: 700;">Todos los Sábados · 16:00 hs</span>
+                </div>
+                <h3 class="heading heading--base" id="ds-activity-title">Taller Abierto de Narración y Cuentos</h3>
+                <p class="text text--small" id="ds-activity-desc">Un espacio al aire libre para que niños, familias y abuelos compartan historias bajo la sombra de los árboles.</p>
+              </div>
+              <button class="btn" id="ds-activity-btn" type="button">Inscribirme ahora</button>
+            </article>
+          </div>
+        </div>
+
+        <!-- MOLÉCULA: BOOK CARD -->
+        <div class="ds-component-preview" id="molecule-book-card-box">
+          <div class="ds-component-preview__title" id="molecule-book-card-title">
+            <span class="ds-badge-molecule">Molécula</span> Tarjeta de Libro de Catálogo (<code>.book-card</code>)
+          </div>
+          <div style="max-width: 240px;">
+            <article class="book-card" id="ds-book-card-sample">
+              <img class="img book-card__cover" id="ds-book-cover" src="img/cuentosdelaselva.jpeg" alt="Portada de libro Cuentos de la Selva">
+              <div class="book-card__body" id="ds-book-body">
+                <h3 class="heading heading--base" id="ds-book-title">Cuentos de la Selva</h3>
+                <p class="text text--small" id="ds-book-author">Horacio Quiroga</p>
+                <span class="text text--small" id="ds-book-tag" style="color: var(--color-accion); font-weight: 600;">Infantil / Cuentos</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- MOLÉCULA: NEWS CARD -->
+        <div class="ds-component-preview" id="molecule-news-card-box">
+          <div class="ds-component-preview__title" id="molecule-news-card-title">
+            <span class="ds-badge-molecule">Molécula</span> Tarjeta de Noticia Horizontal (<code>.news-card</code>)
+          </div>
+          <div style="max-width: 640px;">
+            <article class="news-card" id="ds-news-card-sample">
+              <img class="img news-card__image" id="ds-news-img" src="img/placeholder-landscape.svg" alt="Novedades de la biblioteca">
+              <div class="news-card__body" id="ds-news-body">
+                <h3 class="heading heading--base" id="ds-news-title">Inauguración del nuevo rincón de lectura infantil</h3>
+                <p class="text text--small" id="ds-news-excerpt">Sumamos más de 200 nuevos títulos ilustrados a nuestra colección gracias a las donaciones de la comunidad.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ==========================================================================
+         4. ORGANISMOS
+         ========================================================================== -->
+      <section class="ds-section" id="organismos">
+        <div class="ds-section__title" id="title-organisms">
+          <h2 class="heading heading--lg">4. Componentes Organismos</h2>
+        </div>
+        <p class="text ds-section__desc">
+          Estructuras complejas compuestas por combinaciones de moléculas y átomos que forman secciones completas de la página.
+        </p>
+
+        <!-- ORGANISMO: FORMULARIO DE CONTACTO/CONSULTA -->
+        <div class="ds-component-preview" id="organism-contact-form-box">
+          <div class="ds-component-preview__title" id="organism-contact-form-title">
+            <span class="ds-badge-organism">Organismo</span> Bloque de Formulario Completo (<code>.contact-form</code>)
+          </div>
+          <p class="ds-component-preview__subtitle">Estructura organizada para capturar datos con validación del lado del cliente y retroalimentación accesible.</p>
+
+          <form class="contact-form" id="ds-sample-contact-form" style="max-width: 600px; background:var(--color-fondo); padding:var(--space-md); border-radius:var(--radius-md); border:1px solid var(--color-borde);" onsubmit="event.preventDefault();">
+            <div class="form-field" id="field-group-name">
+              <label class="label" for="ds-form-name">Nombre y apellido <span style="color:var(--color-error)">*</span></label>
+              <input class="input" id="ds-form-name" type="text" placeholder="Ej: María González" required>
+            </div>
+
+            <div class="form-field" id="field-group-email">
+              <label class="label" for="ds-form-email">Correo electrónico <span style="color:var(--color-error)">*</span></label>
+              <input class="input" id="ds-form-email" type="email" placeholder="maria@ejemplo.com" required>
+            </div>
+
+            <div class="form-field" id="field-group-reason">
+              <label class="label" for="ds-form-reason">Motivo de la consulta <span style="color:var(--color-error)">*</span></label>
+              <select class="input" id="ds-form-reason" required>
+                <option value="">Seleccioná un motivo...</option>
+                <option value="actividades">Consulta sobre actividades</option>
+                <option value="asociarse">Quiero hacerme socio/a</option>
+                <option value="donaciones">Donaciones o colaboraciones</option>
+              </select>
+            </div>
+
+            <div class="form-field" id="field-group-message">
+              <label class="label" for="ds-form-message">Mensaje o comentario <span style="color:var(--color-error)">*</span></label>
+              <textarea class="input" id="ds-form-message" placeholder="Escribí tu mensaje aquí..." required></textarea>
+            </div>
+
+            <button class="btn" id="ds-form-submit-btn" type="submit" style="width:100%;">Enviar mensaje</button>
+          </form>
+        </div>
+
+        <!-- ORGANISMO: RESUMEN HEADER / FOOTER -->
+        <div class="ds-component-preview" id="organism-header-footer-summary">
+          <div class="ds-component-preview__title" id="organism-header-footer-title">
+            <span class="ds-badge-organism">Organismos</span> Cabecera (<code>.header</code>) & Pie de página (<code>.footer</code>)
+          </div>
+          <p class="text text--small" style="color:#555; margin-bottom: var(--space-xs);">
+            Los organismos de navegación principal y pie de página están visibles en tiempo real en la parte superior e inferior de esta misma página, integrando la marca, enlaces accesibles, menú hamburguesa en mobile y CTA directo de donación.
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- ==========================================================================
+         5. LAYOUT & MACRO GRILLA
+         ========================================================================== -->
+      <section class="ds-section" id="layout" style="margin-bottom: var(--space-xl);">
+        <div class="ds-section__title" id="title-layout">
+          <h2 class="heading heading--lg">5. Sistema de Layout & Macro Grilla Adaptable</h2>
+        </div>
+        <p class="text ds-section__desc">
+          Estructura de grilla fluida mobile-first definida mediante CSS Grid y Custom Properties dinámicas.
+        </p>
+
+        <div class="ds-table-wrapper">
+          <table class="ds-table" id="grid-specs-table">
+            <thead>
+              <tr>
+                <th>Dispositivo / Breakpoint</th>
+                <th>Ancho Mínimo</th>
+                <th>Columnas Grid (<code>--grid-columns</code>)</th>
+                <th>Margen Lateral (<code>--grid-margin</code>)</th>
+                <th>Espacio Gap (<code>--grid-gap</code>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mobile (Base)</strong></td>
+                <td>375px</td>
+                <td>1 columna (Full Width)</td>
+                <td>16px (<code>--space-sm</code>)</td>
+                <td>16px</td>
+              </tr>
+              <tr>
+                <td><strong>Tablet / Pantalla Media</strong></td>
+                <td>768px</td>
+                <td>6 columnas</td>
+                <td>32px (<code>--space-md</code>)</td>
+                <td>24px</td>
+              </tr>
+              <tr>
+                <td><strong>Desktop / Escritorio</strong></td>
+                <td>1280px</td>
+                <td>12 columnas (Max 1200px)</td>
+                <td>64px (<code>--space-lg</code>)</td>
+                <td>32px</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ============ ORGANISMO: FOOTER ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom" id="footer-bottom-bar" style="margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+        <p class="text text--small" id="footer-copyright">
+          &copy; 2026 Biblioteca Popular "Del otro lado del árbol". Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

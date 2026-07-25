@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Del otro lado del árbol — Inicio</title>
+  <meta name="description" content="Biblioteca popular en el Parque Saavedra. Actividades culturales, catálogo de libros y encuentro comunitario para toda la familia.">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" id="skip-to-content-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ HEADER (organismo .header) ============ -->
+  <header class="header" id="main-header">
+    <div class="header__inner" id="header-inner-container">
+      <a class="header__logo" id="header-brand-logo" href="index.html">
+        <img class="header__logo-mark" id="header-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="44" height="44" style="border-radius: 50%; object-fit: cover; border: 1.5px solid var(--color-primario, #8C9A3E);" referrerPolicy="no-referrer">
+        <span class="header__logo-text" id="header-logo-text-block">
+          <span>Del otro lado del árbol</span>
+          <span class="header__logo-tagline">Biblioteca popular</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle">
+      <label class="header__toggle" id="header-nav-toggle-label" for="nav-toggle" aria-label="Abrir menú de navegación">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav" id="main-navigation" aria-label="Navegación principal">
+        <ul class="header__nav-list" id="main-nav-list">
+          <li><a class="header__nav-link" id="nav-link-inicio" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="header__nav-link" id="nav-link-historia" href="historia.html">Nuestra historia</a></li>
+          <li><a class="header__nav-link" id="nav-link-actividades" href="actividades.html">Actividades</a></li>
+          <li><a class="header__nav-link" id="nav-link-catalogo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="header__nav-link" id="nav-link-noticias" href="noticias.html">Noticias</a></li>
+          <li><a class="header__nav-link" id="nav-link-colaboracion" href="colaboracion.html">Colaborar</a></li>
+          <li><a class="header__nav-link" id="nav-link-contacto" href="contacto.html">Contacto</a></li>
+          <li><a class="header__nav-link" id="nav-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+        </ul>
+        <a class="btn header__cta" id="header-donate-button" href="colaboracion.html">Donar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO (organismo .hero) ============ -->
+    <section class="hero" id="home-hero-section">
+      <img class="hero__media" id="hero-background-media" src="img/biblio.jpg" alt="Familias y niños compartiendo un momento de lectura en la biblioteca Del otro lado del árbol" referrerPolicy="no-referrer">
+      <div class="hero__content" id="hero-content-box">
+        <h1 class="heading heading--display" id="hero-main-heading">Un lugar para leer, aprender y crecer en comunidad.</h1>
+        <p class="text" id="hero-lead-paragraph">Actividades culturales, libros y talleres para todas las edades. Sumate a nuestra comunidad de lectura en el Parque Saavedra.</p>
+        <div class="hero__actions" id="hero-cta-group">
+          <a class="btn" id="hero-primary-action" href="actividades.html">Ver actividades</a>
+          <a class="btn btn--secondary" id="hero-secondary-action" href="historia.html">Conocer la biblioteca</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-grid" id="home-page-grid">
+
+      <!-- ============ PRÓXIMAS ACTIVIDADES (preview de .activities-section) ============ -->
+      <section class="activities-section" id="home-activities-section" aria-labelledby="home-actividades-title">
+        <div class="activities-section__header" id="activities-section-header">
+          <h2 class="heading heading--lg" id="home-actividades-title">Próximas actividades</h2>
+          <a class="link" id="activities-view-all-link" href="actividades.html">Ver todas →</a>
+        </div>
+
+        <div class="activities-section__grid" id="activities-cards-grid">
+
+          <article class="activity-card" id="activity-card-1">
+            <img class="img activity-card__image" id="activity-img-1" src="img/activity-lectura.jpg" alt="Grupo de personas participando de un taller de lectura" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="activity-body-1">
+              <div class="activity-card__meta text text--small" id="activity-meta-1">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Sábado 15 de agosto · 16 h
+              </div>
+              <h3 class="heading heading--base" id="activity-title-1">Taller de lectura en comunidad</h3>
+              <p class="text text--small" id="activity-desc-1">Un espacio para compartir historias, descubrir nuevos libros y disfrutar en comunidad.</p>
+            </div>
+            <a class="btn" id="activity-btn-1" href="actividades.html">Ver actividad</a>
+          </article>
+
+          <article class="activity-card" id="activity-card-2">
+            <img class="img activity-card__image" id="activity-img-2" src="img/evento.jpg" alt="Niñas y niños participando de un club de lectura infantil" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="activity-body-2">
+              <div class="activity-card__meta text text--small" id="activity-meta-2">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Miércoles 19 de agosto · 18 h
+              </div>
+              <h3 class="heading heading--base" id="activity-title-2">Club de lectura infantil</h3>
+              <p class="text text--small" id="activity-desc-2">Encuentro mensual para chicas y chicos que aman leer y contar historias.</p>
+            </div>
+            <a class="btn" id="activity-btn-2" href="actividades.html">Ver actividad</a>
+          </article>
+
+          <article class="activity-card" id="activity-card-3">
+            <img class="img activity-card__image" id="activity-img-3" src="img/airelibre.webp" alt="Narración de cuentos al aire libre en el jardín de la biblioteca" referrerPolicy="no-referrer">
+            <div class="activity-card__body" id="activity-body-3">
+              <div class="activity-card__meta text text--small" id="activity-meta-3">
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                </span>
+                Domingo 23 de agosto · 17 h
+              </div>
+              <h3 class="heading heading--base" id="activity-title-3">Cuentacuentos en el jardín</h3>
+              <p class="text text--small" id="activity-desc-3">Narración de cuentos al aire libre para toda la familia.</p>
+            </div>
+            <a class="btn" id="activity-btn-3" href="actividades.html">Ver actividad</a>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ CATÁLOGO DESTACADO (preview de .catalog-section) ============ -->
+      <section class="catalog-section" id="home-catalog-section" aria-labelledby="home-catalogo-title">
+        <div class="catalog-section__header" id="catalog-section-header">
+          <h2 class="heading heading--lg" id="home-catalogo-title">Catálogo destacado</h2>
+          <a class="link" id="catalog-explore-link" href="catalogo.html">Explorar catálogo →</a>
+        </div>
+
+        <div class="catalog-section__grid" id="catalog-books-grid">
+
+          <article class="book-card" id="book-card-1">
+            <img class="img book-card__image" id="book-img-1" src="img/El-Árbol-Generoso-portada.jpg" alt="Portada original de El árbol generoso" referrerPolicy="no-referrer">
+            <h3 class="heading heading--base" id="book-title-1">El árbol generoso</h3>
+            <p class="text text--small" id="book-author-1">Shel Silverstein</p>
+          </article>
+
+          <article class="book-card" id="book-card-2">
+            <img class="img book-card__image" id="book-img-2" src="img/cuentosdelaselva.jpeg" alt="Portada original de Cuentos de la selva" referrerPolicy="no-referrer">
+            <h3 class="heading heading--base" id="book-title-2">Cuentos de la selva</h3>
+            <p class="text text--small" id="book-author-2">Horacio Quiroga</p>
+          </article>
+
+          <article class="book-card" id="book-card-3">
+            <img class="img book-card__image" id="book-img-3" src="img/maurice-sendak-donde-viven-los-monstruos.jpg" alt="Portada original de Donde viven los monstruos" referrerPolicy="no-referrer">
+            <h3 class="heading heading--base" id="book-title-3">Donde viven los monstruos</h3>
+            <p class="text text--small" id="book-author-3">Maurice Sendak</p>
+          </article>
+
+          <article class="book-card" id="book-card-4">
+            <img class="img book-card__image" id="book-img-4" src="img/laplantadebartolo.jpg" alt="Portada original de La planta de Bartolo" referrerPolicy="no-referrer">
+            <h3 class="heading heading--base" id="book-title-4">La planta de Bartolo</h3>
+            <p class="text text--small" id="book-author-4">Laura Devetach</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ ÚLTIMAS NOTICIAS (preview de .news-section) ============ -->
+      <section class="news-section" id="home-news-section" aria-labelledby="home-noticias-title">
+        <div class="news-section__header" id="news-section-header">
+          <h2 class="heading heading--lg" id="home-noticias-title">Últimas noticias</h2>
+          <a class="link" id="news-view-all-link" href="noticias.html">Ver todas →</a>
+        </div>
+
+        <div class="news-section__grid" id="news-cards-grid">
+
+          <article class="news-card" id="news-card-1">
+            <img class="img news-card__image" id="news-img-1" src="img/airelibre.webp" alt="Chicas y chicos reunidos durante una jornada de cuentacuentos" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="news-body-1">
+              <h3 class="heading heading--base" id="news-title-1">Nueva jornada de cuentacuentos</h3>
+              <p class="text text--small" id="news-desc-1">Revivimos una tarde llena de historias y sonrisas.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="news-card-2">
+            <img class="img news-card__image" id="news-img-2" src="img/donacion.jpg" alt="Cajas de libros donados a la biblioteca" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="news-body-2">
+              <h3 class="heading heading--base" id="news-title-2">Donación de libros</h3>
+              <p class="text text--small" id="news-desc-2">Gracias a todas las personas que hacen esto posible.</p>
+            </div>
+          </article>
+
+          <article class="news-card" id="news-card-3">
+            <img class="img news-card__image" id="news-img-3" src="img/activity-plastica.jpg" alt="Personas participando de un taller de creatividad" referrerPolicy="no-referrer">
+            <div class="news-card__body" id="news-body-3">
+              <h3 class="heading heading--base" id="news-title-3">Taller de creatividad</h3>
+              <p class="text text--small" id="news-desc-3">Así fue nuestro encuentro del último sábado.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ CANALES Y ENLACES OFICIALES (LINKTREE ADAPTACIÓN) ============ -->
+      <section class="linktree-section" id="home-linktree-section" aria-labelledby="home-linktree-title">
+        <div class="linktree-section__header" id="linktree-header">
+          <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-xs); margin-bottom: var(--space-xs);">
+            <img src="img/logo.png" alt="Foto de perfil Biblioteca Del otro lado del árbol" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primario);" referrerPolicy="no-referrer">
+            <span class="comunidad-biblio__tag" id="linktree-tag">
+              @bibliodelotroladolp
+            </span>
+          </div>
+          <h2 class="heading heading--lg" id="home-linktree-title">Canales y enlaces directos</h2>
+          <p class="text text--small" id="home-linktree-subtitle">Todos los recursos, suscripciones y redes oficiales de la biblioteca en un solo lugar.</p>
+        </div>
+
+        <div class="linktree-grid" id="linktree-grid-container">
+
+          <!-- Enlace 1: Comunidad Biblio -->
+          <a class="linktree-card" id="linktree-comunidad" href="colaboracion.html#comunidad-biblio-section">
+            <div class="linktree-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="linktree-card__title">Comunidad Biblio</div>
+              <div class="linktree-card__desc">Suscripción mensual y donaciones para La Biblio</div>
+            </div>
+          </a>
+
+          <!-- Enlace 2: Catálogo Online -->
+          <a class="linktree-card" id="linktree-catalogo" href="catalogo.html">
+            <div class="linktree-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div>
+              <div class="linktree-card__title">Catálogo de Libros</div>
+              <div class="linktree-card__desc">Consultá el acervo bibliográfico disponible</div>
+            </div>
+          </a>
+
+          <!-- Enlace 3: Agenda de Actividades -->
+          <a class="linktree-card" id="linktree-actividades" href="actividades.html">
+            <div class="linktree-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+              <div class="linktree-card__title">Agenda y Talleres</div>
+              <div class="linktree-card__desc">Encuentros, narraciones y actividades culturales</div>
+            </div>
+          </a>
+
+          <!-- Enlace 4: Instagram Oficial -->
+          <a class="linktree-card" id="linktree-instagram" href="https://www.instagram.com/bibliodelotroladolp/" target="_blank" rel="noopener noreferrer">
+            <div class="linktree-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <div class="linktree-card__title">Instagram Oficial</div>
+              <div class="linktree-card__desc">Seguinos en @bibliodelotroladolp</div>
+            </div>
+          </a>
+
+          <!-- Enlace 5: Formulario de Registro & Voluntariado -->
+          <a class="linktree-card" id="linktree-registro" href="colaboracion.html#colaboracion-form">
+            <div class="linktree-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </div>
+            <div>
+              <div class="linktree-card__title">Sumate como Voluntario/a</div>
+              <div class="linktree-card__desc">Completá el registro de colaboradores</div>
+            </div>
+          </a>
+
+          <!-- Enlace 6: Linktree Oficial Exterior -->
+          <a class="linktree-card" id="linktree-external" href="https://linktr.ee/bibliodelotroladolp" target="_blank" rel="noopener noreferrer">
+            <div class="linktree-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+            <div>
+              <div class="linktree-card__title">Linktree Original</div>
+              <div class="linktree-card__desc">linktr.ee/bibliodelotroladolp</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ FOOTER (organismo .footer) ============ -->
+  <footer class="footer" id="main-footer">
+    <div class="container" id="footer-container">
+      <div class="footer__grid" id="footer-grid">
+
+        <div class="footer__brand" id="footer-brand-box">
+          <a class="header__logo" id="footer-brand-logo" href="index.html">
+            <img class="header__logo-mark" id="footer-logo-image" src="img/logo.png" alt="Logotipo Biblioteca Del otro lado del árbol" width="40" height="40">
+            <span class="header__logo-text" id="footer-logo-text-block">
+              <span class="heading heading--base" id="footer-brand-title">Del otro lado del árbol</span>
+            </span>
+          </a>
+          <p class="text text--small" id="footer-brand-slogan">Promovemos la lectura, la cultura y el encuentro comunitario.</p>
+        </div>
+
+        <nav class="footer__col" id="footer-nav-col" aria-label="Navegación del pie de página">
+          <span class="footer__col-title" id="footer-nav-title">Navegación</span>
+          <ul class="footer__links" id="footer-nav-links">
+            <li><a class="link" id="footer-link-inicio" href="index.html">Inicio</a></li>
+            <li><a class="link" id="footer-link-actividades" href="actividades.html">Actividades</a></li>
+            <li><a class="link" id="footer-link-catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="link" id="footer-link-colaboracion" href="colaboracion.html">Cómo colaborar</a></li>
+            <li><a class="link" id="footer-link-contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col" id="footer-info-col">
+          <span class="footer__col-title" id="footer-info-title">Información</span>
+          <ul class="footer__links" id="footer-info-links">
+            <li><a class="link" id="footer-link-historia" href="historia.html">Sobre la biblioteca</a></li>
+            <li><a class="link" id="footer-link-noticias" href="noticias.html">Noticias</a></li>
+            <li><a class="link" id="footer-link-design-system" href="design-system.html">Sistema de diseño</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col" id="footer-contact-col">
+          <span class="footer__col-title" id="footer-contact-title">Contacto</span>
+          <ul class="footer__links" id="footer-contact-links">
+            <li><a class="link" id="footer-email-link" href="mailto:biblioteca@delotroladodelarbol.org">biblioteca@delotroladodelarbol.org</a></li>
+            <li><a class="link" id="footer-phone-link" href="tel:+541112345678">11 1234 5678</a></li>
+            <li class="text text--small" id="footer-address-text">Parque Saavedra, Buenos Aires</li>
+          </ul>
+          <div class="footer__social" id="footer-social-group">
+            <a class="icon" id="footer-social-instagram" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a class="icon" id="footer-social-facebook" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
