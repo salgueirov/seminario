@@ -1,6 +1,6 @@
 # seminario
 Técnicas de maquetación y diseño de interfaces web
-- Salgueiro Valentina 119138/1
+Salgueiro Valentina 119138/1
 
 Organización: Biblioteca Popular “Del otro lado del árbol”
 
